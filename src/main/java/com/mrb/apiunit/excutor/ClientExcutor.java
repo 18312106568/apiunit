@@ -39,7 +39,7 @@ public class ClientExcutor implements InvocationHandler {
      * @param clazz
      * @return
      */
-    public <T> T getProxy(Class<? extends BaseClient> clazz) throws IOException {
+    public <T> T getProxy(Class<? extends BaseClient> clazz) throws IOException, ClassNotFoundException {
         this.serviceClass  = ApiUnitContext.getServiceClass(clazz);
         this.service = CAServiceFactory.getInstance(url).getService(serviceClass);
         Object newProxyInstance = Proxy.newProxyInstance(

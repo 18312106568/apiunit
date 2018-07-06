@@ -103,8 +103,8 @@ public class ServiceGenerator{
             descriptorSb.append(">;");
             //声明方法
             MethodVisitor methodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC+Opcodes.ACC_ABSTRACT, 
-                   method.getName(), descriptorSb.toString(),  
-                null, null);
+                   method.getName(),"(Ljava/lang/String;)Lretrofit2/Call;",// descriptorSb.toString(),  
+                descriptorSb.toString(), null);
             //添加方法注解
            for(Annotation ann : method.getDeclaredAnnotations()){
                if(ann instanceof GET){
